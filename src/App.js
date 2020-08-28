@@ -1,5 +1,5 @@
 import React from 'react';
-// import Form from './Form';
+import Form from './Form';
 
 // statefull component
 class App extends React.Component {
@@ -22,14 +22,11 @@ class App extends React.Component {
     return(
       <div>
         <h1>Todo List</h1>
-        <form type="submit">
-          <input
-            type="text"
-            onChange={e => this.handleTodo(e)}
-            value={this.state.todo}
-          />
-          <button onClick={e => this.handleAddTodo(e)}>Add</button>
-        </form>
+        <Form
+          onClick={e => this.handleAddTodo(e)}
+          onChange={e => this.handleTodo(e)}
+          value={this.state.todo}
+        />
         <h1>{this.state.todo}</h1>
         <ul>
           {
