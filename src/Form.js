@@ -2,11 +2,16 @@ import React from 'react';
 import Button from './Button';
 import Input from './Input';
 
-function Form() {
+function Form(props) {
+  
   return (
     <form type="submit">
-      <Input />
-      <Button />
+      <Input 
+       onChange={props.onChange}
+      />
+      <Button 
+       onClick={props.onClick} 
+      />
     </form>
   );
 }
