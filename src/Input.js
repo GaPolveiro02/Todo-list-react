@@ -1,6 +1,5 @@
 import React from 'react';
 
-// stateless component
 function Input(props) {
    return (
         <input

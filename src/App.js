@@ -2,7 +2,6 @@ import React from 'react';
 import Form from './Form';
 import Button from './Button';
 
-// statefull component
 class App extends React.Component {
   state = {
     todo: '',
