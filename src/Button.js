@@ -6,7 +6,7 @@ function Button(props) {
     <button 
       onClick={e => props.onClick(e)}
     >
-      Adicionar 
+     {props.text}
     </button>
     )
 }
