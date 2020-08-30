@@ -1,6 +1,6 @@
 import React from 'react';
 import Form from './Form';
-
+import Button from './Button';
 
 // statefull component
 class App extends React.Component {
@@ -8,7 +8,7 @@ class App extends React.Component {
     todo: '',
     todos: []
   };
-
+  
   handleTodo(e) {
     this.setState({ todo: e.target.value });
   }
@@ -17,6 +17,11 @@ class App extends React.Component {
     e.preventDefault();
     this.setState({ todos: [...this.state.todos, this.state.todo] });
     this.setState({ todo: '' })
+  }
+
+  handleRemoveTodo(index){
+    this.state.todos.splice(index)
+    this.setState({ todos: [...this.state.todos] })
   }
 
   render() {
@@ -31,7 +36,15 @@ class App extends React.Component {
         <h1>{this.state.todo}</h1>
         <ul>
           {
-            this.state.todos.map(item => <li key={item}><h2>{item}</h2></li>)
+            this.state.todos.map((item,index) => 
+          <li 
+              key={item}>
+              <h2>{item}
+              <Button 
+                onClick={e => this.handleRemoveTodo(e,index)}
+              /> 
+              </h2>
+          </li>)
           }
         </ul>
       </div>
