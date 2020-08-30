@@ -8,8 +8,10 @@ function Form(props) {
     <form type="submit">
       <Input 
        onChange={props.onChange}
+       value={props.value}
       />
       <Button 
+       text={props.text}
        onClick={props.onClick} 
       />
     </form>
