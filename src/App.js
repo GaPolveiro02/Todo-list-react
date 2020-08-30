@@ -32,6 +32,7 @@ class App extends React.Component {
            onClick={e => this.handleAddTodo(e)}
            onChange={e => this.handleTodo(e)}
            value={this.state.todo}
+           text='Adicionar'
         />
         <h1>{this.state.todo}</h1>
         <ul>
@@ -42,6 +43,7 @@ class App extends React.Component {
               <h2>{item}
               <Button 
                 onClick={e => this.handleRemoveTodo(e,index)}
+                text='Remover'
               /> 
               </h2>
           </li>)
